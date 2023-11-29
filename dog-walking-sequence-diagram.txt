@@ -1,0 +1,93 @@
+title Dog Walking
+
+entryspacing 1.0
+
+participant main.js
+
+participant Walkers.js
+
+participant CityList.js
+
+participant RegisteredPets.js
+
+participant Assignments.js
+
+participant database.js
+
+main.js->Walkers.js:I need the function reference for generating HTML for cities
+Walkers.js-->main.js:Gladly.
+-----
+-----
+main.js->CityList.js:I need the function reference for generating HTML for cities
+CityList.js-->main.js:Sure! Here you go.
+-----
+-----
+main.js->RegisteredPets.js:Provide the HTML generation function for pets
+RegisteredPets.js-->main.js:Here is my wonderful RegisteredPets function.
+-----
+-----
+main.js->Assignments.js:May I have the HTML generation function for assignments
+Assignments.js-->main.js:Absolutely.
+-----
+-----
+note over main.js:Invoke CityList function
+-----
+-----
+CityList.js->database.js:I need all the city objects
+database.js-->CityList.js:Here's a copy of them
+-----
+-----
+loop 
+CityList.js->CityList.js:Convert each\nobject to an `<li>`
+end
+-----
+-----
+CityList.js-->main.js:Here's all the generated HTML
+-----
+-----
+note over main.js:Invoke Walkers function
+-----
+-----
+Walkers.js-->database.js:I need all the walker objects
+database.js-->Walkers.js:Here's a copy of them
+-----
+-----
+loop
+Walkers.js->Walkers.js:Convert each\nobject to an `<li>`
+end
+-----
+-----
+Walkers.js-->main.js:Here's all the generated HTML
+-----
+-----
+note over main.js:Invoke RegisteredPets function
+-----
+-----
+RegisteredPets.js-->database.js:I need all the pet objects
+database.js-->RegisteredPets.js:Here's a copy of them
+-----
+-----
+loop
+RegisteredPets.js->RegisteredPets.js:Convert each\nobject to an `<li>`
+end
+-----
+-----
+RegisteredPets.js-->main.js:Here's all the generated HTML
+-----
+-----
+note over main.js:Invoke Assignments function
+-----
+-----
+Assignments.js-->database.js:I need all the assignment objects
+database.js-->Assignments.js:Here's a copy of them
+-----
+-----
+loop 
+Assignments.js->Assignments.js:Convert each\nobject to an `<li>`
+end
+-----
+-----
+Assignments.js-->main.js:Here's all the generated HTML
+-----
+-----
+note over main.js:Update the innerHTML of the\n<main> elements in the DOM
